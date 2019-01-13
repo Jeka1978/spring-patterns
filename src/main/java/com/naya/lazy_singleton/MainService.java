@@ -11,14 +11,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class MainService {
+@Autowired
+@Lazy
+private LazySingleton lazySingleton;
 
-
-    private final LazySingleton lazySingleton;
-
-    @Lazy
-    public MainService(LazySingleton lazySingleton) {
-        this.lazySingleton = lazySingleton;
-    }
 
 
     @EventListener(ContextRefreshedEvent.class)
@@ -26,12 +22,13 @@ public class MainService {
         if (planA()) {
             System.out.println("Plan A is working...");
         }else {
+            lazySingleton.doPlanB();
             // some code of lazy Service
         }
     }
 
     private boolean planA() {
-        return true;
+        return false;
     }
 
 }

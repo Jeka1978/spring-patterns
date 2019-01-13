@@ -7,9 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public interface MessageSender {
     String send(Message message);
+    String myCode();
 
     @Autowired
-    default void register(MessageDistributor distributor) {
-        distributor.register("001", this);
+    default void register(MessageDistributor messageDistributor) {
+        messageDistributor.register(myCode(), this);
     }
+
+
+
 }

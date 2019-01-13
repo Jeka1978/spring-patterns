@@ -18,12 +18,7 @@ import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_SING
 public class MainConf {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(MainConf.class);
-        var registry = (BeanDefinitionRegistry) context.getBeanFactory();
-        GenericBeanDefinition myBeanDefinition = new GenericBeanDefinition();
-        myBeanDefinition.setBeanClass(SmsSender.class);
-        myBeanDefinition.setScope(SCOPE_SINGLETON);
-        registry.registerBeanDefinition("001", myBeanDefinition);
-        System.out.println();
-        context.getBean(SmsSender.class);
+
+
     }
 }

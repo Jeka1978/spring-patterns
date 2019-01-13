@@ -5,26 +5,26 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
+import static com.naya.strategy_command.DeliveryType.SMS;
+
 /**
  * @author Evgeny Borisov
  */
-//@Service
+@Service(SMS)
 public class SmsSender implements MessageSender {
-    @Value("${stam}")
-    private String stam;
 
-    public SmsSender() {
-        System.out.println("ASDasas");
-    }
 
-    @PostConstruct
-    public void init(){
-        System.out.println("SMS SENDNER CREATED");
-    }
     @Override
     public String send(Message message) {
-        String status = "Sms msg was sent";
+        String status = "Sms msg was sent ";
         System.out.println(status);
         return status;
     }
+
+    @Override
+    public String myCode() {
+        return SMS;
+
+    }
+
 }
