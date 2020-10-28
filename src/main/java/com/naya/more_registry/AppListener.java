@@ -12,7 +12,6 @@ import java.util.Map;
  * @author Evgeny Borisov
  */
 public class AppListener implements ApplicationListener<ContextRefreshedEvent> {
-
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         ApplicationContext context = event.getApplicationContext();

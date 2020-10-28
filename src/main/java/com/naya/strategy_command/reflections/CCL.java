@@ -1,13 +1,10 @@
 package com.naya.strategy_command.reflections;
 
-import com.naya.springpatterns.scala_traits.Sender;
 import com.naya.strategy_command.MessageSender;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 

@@ -10,8 +10,8 @@ public interface MessageSender {
     String myCode();
 
     @Autowired
-    default void register(MessageDistributor messageDistributor) {
-        messageDistributor.register(myCode(), this);
+    default void register(ПочтальонПечкин почтальонПечкин) {
+        почтальонПечкин.register(myCode(), this);
     }
 
 

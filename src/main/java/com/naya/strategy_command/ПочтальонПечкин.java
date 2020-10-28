@@ -18,7 +18,7 @@ import static org.springframework.data.util.Pair.toMap;
  */
 @RestController
 @RequiredArgsConstructor
-public class MessageDistributor {
+public class ПочтальонПечкин {
 
 
     private Map<String,MessageSender> map = new HashMap<>();
